@@ -7,7 +7,7 @@
  * Error description link: http://findbugs.sourceforge.net/bugDescriptions.html#ES_COMPARING_STRINGS_WITH_EQ
  *
  * ==========================
- * Time to fix: %h %m %s
+ * Time to fix: 0h 1m 5s
  * ==========================
  */
 
@@ -117,7 +117,7 @@ public class MultiPhrasePrefixQuery extends Query {
             field = terms[0].field();
 
         for (int i = 0; i < terms.length; i++) {
-            if (terms[i].field() != field) {
+            if (field.equals(terms[i].field())) {
                 throw new IllegalArgumentException(
                         "All phrase terms must be in the same field (" + field + "): "
                                 + terms[i]);
