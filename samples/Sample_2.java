@@ -7,7 +7,7 @@
  * Error description link: http://findbugs.sourceforge.net/bugDescriptions.html#RV_ABSOLUTE_VALUE_OF_RANDOM_INT
  *
  * ==========================
- * Time to fix: %h %m %s
+ * Time to fix: 0h 3m 15s
  * ==========================
  */
 
@@ -115,7 +115,7 @@ class SubclassBytecodeGenerator implements BytecodeGenerator {
                 || isComingFromSealedPackage(type)) {
             typeName = "codegen." + typeName;
         }
-        return String.format("%s$%s$%d", typeName, "MockitoMock", Math.abs(random.nextInt()));
+        return String.format("%s$%s$%d", typeName, "MockitoMock", random.nextInt(Integer.MAX_VALUE));
     }
 
     private boolean isComingFromJDK(Class<?> type) {
