@@ -7,7 +7,7 @@
  * Error description link: http://findbugs.sourceforge.net/bugDescriptions.html#FE_TEST_IF_EQUAL_TO_NOT_A_NUMBER
  *
  * ==========================
- * Time to fix: %h %m %s
+ * Time to fix: 0h 3m 50s
  * ==========================
  */
 
