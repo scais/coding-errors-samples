@@ -7,7 +7,7 @@
  * Error description link: http://findbugs.sourceforge.net/bugDescriptions.html#BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS
  *
  * ==========================
- * Time to fix: %h %m %s
+ * Time to fix: 0h 2m 33s
  * ==========================
  */
 
@@ -88,8 +88,14 @@ public class EntityUniqueKey implements Serializable {
 
 	@Override
 	public boolean equals(Object other) {
+        if (this == other)
+            return true;
+        if (other == null)
+            return false;
+        if (getClass() != other.getClass())
+            return false;        
 		EntityUniqueKey that = (EntityUniqueKey) other;
-		return that != null && that.entityName.equals( entityName )
+		return that.entityName.equals( entityName )
 				&& that.uniqueKeyName.equals( uniqueKeyName )
 				&& keyType.isEqual( that.key, key );
 	}
